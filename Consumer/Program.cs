@@ -36,6 +36,7 @@ class Program
                 {
                     var cr = consumer.Consume(cts.Token);
                     Console.WriteLine($"Consumed event from topic {topic} with key {cr.Message.Key,-10} and value {cr.Message.Value}");
+                    Thread.Sleep(1000);
                 }
             }
             catch (OperationCanceledException)
